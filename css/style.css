@@ -2288,6 +2288,7 @@ portfolio
   -webkit-transition: 0.55s ease-in-out;
   transition: 0.55s ease-in-out;
   width: 100%;
+  
   /* clear fix */ }
   /* line 757, ../scss/_content.scss */
   .art-grid:after {
@@ -2335,7 +2336,7 @@ portfolio
       padding-bottom: 90%; }
   /* line 812, ../scss/_content.scss */
   .art-grid.art-grid-3-col .art-grid-item {
-    width: 33.3333%; }
+    width: calc(33.3333% - 30px); }
     /* line 816, ../scss/_content.scss */
     .art-grid.art-grid-3-col .art-grid-item .art-portfolio-item-frame.art-horizontal {
       padding-bottom: 65%; }
@@ -2346,6 +2347,7 @@ portfolio
     .art-grid.art-grid-3-col .art-grid-item .art-portfolio-item-frame.art-square {
       padding-bottom: 90%; }
 
+      
 /* ----- touch device ----- */
 @media (pointer: coarse) {
   /* line 834, ../scss/_content.scss */

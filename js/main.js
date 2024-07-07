@@ -94,7 +94,6 @@ $(function() {
   });
 
    // Masonry Grid
- 
    $('.art-grid').isotope({
     filter: '*',
     itemSelector: '.art-grid-item',
