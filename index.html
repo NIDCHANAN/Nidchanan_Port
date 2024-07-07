@@ -1604,18 +1604,29 @@
     <!-- preloader end -->
 
   </div>
-   <!-- Swiper JS -->
-   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Isotope -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-  <script src="./script.js"></script>
-  <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
+    <!-- jquery js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- anime js -->
+    <script src="./js/plugins/anime.min.js"></script>
+    <!-- swiper js -->
+    <script src="./js/plugins/swiper.min.js"></script>
+    <!-- progressbar js -->
+    <script src="./js/plugins/progressbar.min.js"></script>
+    <!-- typing js -->
+    <script src="./js/plugins/typing.min.js"></script>
+    <!-- isotope js -->
+    <script src="./js/plugins/isotope.min.js"></script>
+    <!-- fancybox js -->
+    <script src="./js/plugins/fancybox.min.js"></script>
+    <!-- swup js -->
+    <script src="https://unpkg.com/swup@4"></script>
+    
+     <!-- Main -->
+     <script src="./js/main.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
-
-
     class TxtRotate {
       constructor(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -1669,8 +1680,6 @@
       }
     };
 
-
-
     // Initialize Swiper
     var swiper = new Swiper(".mySwiper", {
       slidesPerGroup: 1,
@@ -1694,139 +1703,6 @@
     });
 
     
-    document.addEventListener("swup:contentReplaced", function () {
-      // Masonry Grid
-      var $grid = $('.art-grid').isotope({
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        masonry: {
-          columnWidth: '.grid-sizer'
-        }
-      });
-
-      $('.art-filter a').on('click', function () {
-        $('.art-filter .art-current').removeClass('art-current');
-        $(this).addClass('art-current');
-
-        var selector = $(this).data('filter');
-        $('.art-grid').isotope({
-          filter: selector
-        });
-        
-        return false;
-      });
-
-      anime({
-        targets: '.art-counter-frame',
-        opacity: [0, 1],
-        duration: 800,
-        delay: 300,
-        easing: 'linear',
-      });
-
-      $('.art-counter').each(function () {
-        $(this).prop('Counter', 0).animate({
-          Counter: $(this).text()
-        }, {
-          duration: 2000,
-          easing: 'linear',
-          step: function (now) {
-            $(this).text(Math.ceil(now));
-          }
-        });
-      });
-    })
-   
-    $(function () {
-      // portfolio filter
-      $('.art-filter a').on('click', function() {
-        $('.art-filter .art-current').removeClass('art-current');
-        $(this).addClass('art-current');
-
-        var selector = $(this).data('filter');
-        $('.art-grid').isotope({
-          filter: selector
-        });
-
-        return false;
-      });
-
-      // masonry Grid
-      $('.art-grid').isotope({
-        filter: '*',
-        itemSelector: '.art-grid-item',
-        transitionDuration: '.6s',
-        layoutMode: 'cellsByRow',
-      });
-    });
-
-    $(function () {
- // slider blog
- var swiper = new Swiper('.art-blog-slider', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    speed: 1400,
-    autoplay: {
-      delay: 4000,
-    },
-    autoplaySpeed: 5000,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.art-blog-swiper-next',
-      prevEl: '.art-blog-swiper-prev',
-    },
-    breakpoints: {
-      1500: {
-        slidesPerView: 3,
-      },
-      1200: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 1,
-      },
-    },
-  });
-    });
-
-
-    // jQuery for menu interactions
-    $(function () {
-      // Toggle info bar
-      $('.art-info-bar-btn').on('click', function () {
-        $('.art-info-bar').toggleClass('art-active');
-        $('.art-menu-bar-btn').toggleClass('art-disabled');
-      });
-
-      // Toggle menu bar
-      $('.art-menu-bar-btn').on('click', function () {
-        $('.art-menu-bar-btn, .art-menu-bar').toggleClass('art-active');
-        $('.art-info-bar-btn').toggleClass('art-disabled');
-      });
-
-      // Toggle content active state
-      $('.art-info-bar-btn, .art-menu-bar-btn').on('click', function () {
-        $('.art-content').toggleClass('art-active');
-      });
-
-      // Close menus on curtain or top bar click
-      $('.art-curtain, .art-mobile-top-bar').on('click', function () {
-        $('.art-menu-bar-btn, .art-menu-bar, .art-info-bar, .art-content').removeClass('art-active art-disabled');
-      });
-
-      // Handle sub-menu toggle
-      $('.menu-item').on('click', function () {
-        if ($(this).hasClass('menu-item-has-children')) {
-          $(this).children('.sub-menu').toggleClass('art-active');
-        } else {
-          $('.art-menu-bar-btn, .art-menu-bar, .art-info-bar, .art-content').removeClass('art-active art-disabled');
-        }
-      });
-
-    });
   </script>
 </body>
 
