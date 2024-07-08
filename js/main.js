@@ -403,8 +403,6 @@ $(function() {
   });
 
 
-  $.fancybox.defaults.hash = false;
-
   $('.current-menu-item a').clone().appendTo('.art-current-page');
 
   $('.art-map-overlay').on('click', function() {
