@@ -8,6 +8,7 @@ Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=Mille
 p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
 
 ------------------------------------------- */
+
 $(function() {
   "use strict";
 
@@ -27,7 +28,6 @@ $(function() {
       duration: 600,
       easing: 'linear',
       complete: function(anim) {
-
       }
     });
     anime({
